@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 MAINTAINER Flyte Team <users@flyte.org>
 LABEL org.opencontainers.image.source=https://github.com/flyteorg/flytekit
 WORKDIR /root
@@ -18,7 +18,7 @@ RUN apt-get update \
     && apt-get install -y software-properties-common \
     && add-apt-repository ppa:deadsnakes/ppa \
     && apt-get update \
-    && apt-get install -y python3.12 python3.12-pip python3.12-venv python3.12-dev build-essential wget ca-certificates \
+    && apt-get install -y python3 python3-pip python3-venv python3-dev build-essential wget ca-certificates \
     && ln -s /usr/bin/python3.12 /usr/bin/python3 \
     && ln -s /usr/bin/python3.12 /usr/bin/python \
     && mkdir -p /tmp/ \
