@@ -19,7 +19,6 @@ echo "Using build version: ${BUILD_VERSION}"
 
 # Build the Docker image
 docker build \
-    --build-arg VERSION=flyteinteractive-latest \
     --build-arg TARGETARCH=amd64 \
     -t ${IMAGE_NAME}:${VERSION} \
     -t ${IMAGE_NAME}:latest \
