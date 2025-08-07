@@ -16,7 +16,6 @@ ARG TARGETARCH
 # 7. Change the permission of /tmp, so that others can run command on it
 RUN apt-get update \
     && apt-get install -y python3 python3-pip python3-venv python3-dev build-essential wget ca-certificates \
-    && if [ ! -L /usr/bin/pip ]; then ln -s /usr/bin/pip3 /usr/bin/pip; fi \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && mkdir -p /tmp/ \
     && mkdir -p /tmp/code-server \
