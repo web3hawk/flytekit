@@ -12,7 +12,7 @@ VERSION=${1:-$DEFAULT_VERSION}
 BUILD_VERSION=${VERSION#v}
 
 # Image name
-IMAGE_NAME="push.fzyhun.io/founder/aione.flyteinteractive"
+IMAGE_NAME="push.fzyun.io/founder/aione.flyteinteractive"
 
 echo "Building Docker image: ${IMAGE_NAME}:${VERSION}"
 echo "Using build version: ${BUILD_VERSION}"
