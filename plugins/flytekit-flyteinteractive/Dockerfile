@@ -1,13 +1,13 @@
-FROM python:3.10-slim-bookworm
+FROM ubuntu:22.04
 MAINTAINER Flyte Team <users@flyte.org>
-LABEL org.opencontainers.image.source https://github.com/flyteorg/flytekit
+LABEL org.opencontainers.image.source=https://github.com/flyteorg/flytekit
 WORKDIR /root
 ENV PYTHONPATH /root
 
 ARG VERSION
 ARG TARGETARCH
 
-# 1. Update the necessary packages for flytekit
+# 1. Update the necessary packages and install Python
 # 2. Install code-server
 # 3. Download code-server extensions for Python and Jupyter via wget
 # 4. Install flytekit and flytekit-flyteinteractive with no cache
@@ -15,7 +15,9 @@ ARG TARGETARCH
 # 6. Some packages will create config file under /home by default, so we need to make sure it's writable
 # 7. Change the permission of /tmp, so that others can run command on it
 RUN apt-get update \
-    && apt-get install build-essential wget -y \
+    && apt-get install -y python3 python3-pip python3-venv python3-dev build-essential wget ca-certificates \
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && ln -s /usr/bin/pip3 /usr/bin/pip \
     && mkdir -p /tmp/ \
     && mkdir -p /tmp/code-server \
     && wget --no-check-certificate -O /tmp/code-server/code-server-4.19.0-linux-${TARGETARCH}.tar.gz https://github.com/coder/code-server/releases/download/v4.19.0/code-server-4.19.0-linux-${TARGETARCH}.tar.gz \
