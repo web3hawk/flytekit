@@ -4,6 +4,8 @@ LABEL org.opencontainers.image.source=https://github.com/flyteorg/flytekit
 WORKDIR /root
 ENV PYTHONPATH /root
 ENV PIP_BREAK_SYSTEM_PACKAGES 1
+ENV UV_SYSTEM_PYTHON 1
+
 
 
 ARG TARGETARCH
