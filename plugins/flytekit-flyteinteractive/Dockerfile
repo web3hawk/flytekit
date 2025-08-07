@@ -3,6 +3,8 @@ MAINTAINER Flyte Team <users@flyte.org>
 LABEL org.opencontainers.image.source=https://github.com/flyteorg/flytekit
 WORKDIR /root
 ENV PYTHONPATH /root
+ENV PIP_BREAK_SYSTEM_PACKAGES 1
+
 
 ARG VERSION
 ARG TARGETARCH
