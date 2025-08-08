@@ -30,7 +30,7 @@ RUN apt-get update \
     && wget --no-check-certificate https://open-vsx.org/api/ms-python/python/2023.20.0/file/ms-python.python-2023.20.0.vsix -P /tmp/code-server \
     && wget --no-check-certificate https://open-vsx.org/api/ms-toolsai/jupyter/2023.9.100/file/ms-toolsai.jupyter-2023.9.100.vsix -P /tmp/code-server \
     && pip install --no-cache-dir uv \
-    && uv pip install --break-system-packages --system --no-cache-dir -U flytekitplugins-flyteinteractive flytekit \
+    && uv pip install --break-system-packages --system --no-cache-dir -U flytekitplugins-flyteinteractive flytekit kubernetes \
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/ \

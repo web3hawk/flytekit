@@ -5,7 +5,7 @@
 # If no version is provided, defaults to v1.0.0
 
 # Set default version
-DEFAULT_VERSION="v1.0.0"
+DEFAULT_VERSION="v1.3.0"
 VERSION=${1:-$DEFAULT_VERSION}
 
 # Remove 'v' prefix if present for Docker build arg
